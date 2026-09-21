@@ -1,40 +1,48 @@
 
 
-
-
 clear all
 close all
 
-%Student Name - Shane O'Donnell
+%Shane O'Donnell
 
-%Student Number - 22336731
+%22336731
 
-%Lab Group - 
+%Lab Group - n/a
 
 %Task 1
 
-x = [];
+x = [1 2 -2 0 -1 2]; %n2s matlab arrays start at index 1 not 0 like in cpp
 
 %Task 2
 
-t = [];
+t = [0 1 2 3 4 5]; % alt is t = 0:5;
 
 %Task 3
 
 figure
-stem()
+stem(t, x)
 
 %Task 4
 
+title('22336731') % Figure title
+xlabel('time')
+ylabel('magnitude')
 
 
 %Task 5
+time_lower_bound = min(t) - 1;
+time_upper_bound = max(t) + 1;
 
+y_lower_bound = min(x) - 1;
+y_upper_bound = max(x) + 1;
 
+xlim([time_lower_bound time_upper_bound]) % increase range of both axees by one 
+ylim([y_lower_bound y_upper_bound]) % 
 
 %Task 6
 
-
+%a = zeros(1,2);
+xDelayed = horzcat(zeros(1,2),x);
 
 %Task 7
 
