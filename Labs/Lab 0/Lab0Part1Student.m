@@ -19,8 +19,8 @@ t = [0 1 2 3 4 5]; % alt is t = 0:5;
 
 %Task 3
 
-figure
-stem(t, x)
+figure(1)
+stem(t, x);
 
 %Task 4
 
@@ -43,19 +43,37 @@ ylim([y_lower_bound y_upper_bound]) %
 
 %a = zeros(1,2);
 xDelayed = horzcat(zeros(1,2),x);
+tDelayed = 0:7;
 
 %Task 7
 
+figure(2) %creates a new figure
+stem(t,x)
+hold on
+stem(tDelayed, xDelayed)
 
+
+D_upper_bound = max(tDelayed) + 1;
+Dy_upper_bound = max(xDelayed) + 1;
+xlim([time_lower_bound D_upper_bound])
+ylim([y_lower_bound Dy_upper_bound]);
 
 
 %Task 8
 
 
+title('Figure 2 ( 22336731 )') % Figure title
+xlabel('t')
+ylabel('m')
+legend('x[n]' , 'x[n + 2]')
 
 %Task 9
 
+x1 = [0 -1 3 0 0];
 
+x2 = [0 3 3 1 -2];
+
+xAddition = x1 + x2;
 
 %Task 10
 
