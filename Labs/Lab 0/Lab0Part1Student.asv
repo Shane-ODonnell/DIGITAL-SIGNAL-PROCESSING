@@ -78,7 +78,8 @@ xAddition = x1 + x2;
 %Task 10
 
 figure %creates a new figure
-subplot(2,1,1) %This figure will have 2 rows, 1 column, and we're selecting the first plot
+subplot(2,1,1) %This figure will have 2 rows, 1 column, and we're selecting the
+first plot
 stem()
 
 
