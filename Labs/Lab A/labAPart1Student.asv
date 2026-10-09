@@ -35,7 +35,7 @@ x = sin( 2 * pi * F0 * t);
 %Task 5
 
 
-sound(x, Fs) %listen to signal x at a sampling frequency, Fs
+%sound(x, Fs) %listen to signal x at a sampling frequency, Fs
 
 %NOTE: HATED THAT SOUND OMG JUMPSCARE HAD TO TURN THE SPEAKER OFF ASAP THAT
 %WAS PAINFUL
@@ -46,16 +46,41 @@ sound(x, Fs) %listen to signal x at a sampling frequency, Fs
 x1 = x;
 x2 = sin( 2 * pi * 7200 * t);
 
-%Task 7
+%Task 7  -----------------------------------------------------------------
 
-%soundsc(x1,Fs);
-%pause(2)
-%soundsc(x2,Fs);
-%pause(2)
+figure(1)
+xlabel('time')
+ylabel('magnitude')
+stem(t, x1);
+hold on
+stem(t, x2);
 
+time_lower_bound = 0;
+time_upper_bound = 1/512;
 
+y_lower_bound = min(x) - 1;
+y_upper_bound = max(x) + 1;
 
-%Task 8
+xlim([time_lower_bound time_upper_bound]);
+ylim([y_lower_bound y_upper_bound]) % 
+
+%Observstions: The two signals have approximately equal magnitudes
+%  but opposite signs at each sample.
+
+soundsc(x1,Fs); %sounds like an "a" or MI (DE system)
+pause(4)
+soundsc(x2,Fs); %sounds like an "d" or DO
+pause(4) 
+
+%pause of 4 so the 3 second signal can play with a 1s break
+
+% IE: the 7200 Hz signal sounds lower than the 900 Hz 
+%   signal because of aliasing.
+
+%Task 8 -----------------------------------------------------------------
+
+%Q: According to Nyquist, what is the minimum value of the sampling 
+% degrade frequency that can be used to not
 
 
 %Task 9
